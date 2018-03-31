@@ -31,6 +31,17 @@ const CustomerType = new GraphQLObjectType({
     })
 });
 
+// Option Type
+const OptionType = new GraphQLObjectType({
+    name: 'Option',
+    fields: () =>({
+        id: {type: GraphQLInt},
+        contract: {type: GraphQLString},
+        period: {type: GraphQLString},
+        month: {type: GraphQLInt},
+        week: {type: GraphQLInt}
+    })
+});
 // Root Query
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -50,6 +61,13 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(CustomerType),
             resolve(){
                 return axios.get('http://localhost:4051/Customers' )
+                .then(res => res.data);
+            }
+        },
+        Options:{
+            type: new GraphQLList(OptionType),
+            resolve(){
+                return axios.get('http://localhost:4051/Options' )
                 .then(res => res.data);
             }
         }
