@@ -7,7 +7,7 @@
   "scripts": {
     "debug": "node ./server",
     "start": "npm run dev:server",
-    "dev:server": "nodemon server.js",
+    "dev:server": "nodemon ./server",
     "json:server": "json-server --watch data.json --port 4051"
   },
   "repository": {

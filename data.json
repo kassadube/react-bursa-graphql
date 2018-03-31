@@ -53,17 +53,28 @@
       "email": "bib@gmail.com",
       "age": 44,
       "id": "titKrqj"
+    },
+    {
+      "name": "treest",
+      "email": "bib@gmail.com",
+      "age": 33,
+      "id": "IV5eFVs"
+    },
+    {
+      "name": "trwsweest",
+      "email": "bib@gmail.com",
+      "age": 33,
+      "id": "BzkH3uA"
     }
   ],
-  "Options":[
+  "Options": [
     {
       "contract": 1440,
       "type": "P",
       "period": "W",
       "month": 4,
-      "week": 1 ,
-      "expiration":"2018-04-05"
+      "week": 1,
+      "expiration": "2018-04-05"
     }
   ]
-
 }
