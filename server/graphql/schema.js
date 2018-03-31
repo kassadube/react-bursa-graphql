@@ -6,8 +6,10 @@ const {
     GraphQLInt,
     GraphQLSchema,
     GraphQLList,
-    GraphQLNonNull,
+    GraphQLNonNull,    
 } = require('graphql');
+
+import DateTimeScalar from './scalars/dateTimeScalar';
 
 // Hardcoded data
 
