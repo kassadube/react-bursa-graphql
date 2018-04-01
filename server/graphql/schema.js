@@ -13,32 +13,20 @@ import DateTimeScalar from './scalars/dateTimeScalar';
 import CustomerQueries from './customers/customerQueries';
 import CustomerMutation from './customers/customerMutation';
 
+import OptionQueries from './options/optionQueries';
+import OptionMutation from './options/optionMutation';
+//import CustomerMutation from './customers/customerMutation';
+
 
 
 // Option Type
-const OptionType = new GraphQLObjectType({
-    name: 'Option',
-    fields: () =>({
-        id: {type: GraphQLInt},
-        contract: {type: GraphQLString},
-        period: {type: GraphQLString},
-        month: {type: GraphQLInt},
-        week: {type: GraphQLInt},
-        expiration: {type: DateTimeScalar}
-    })
-});
+
 // Root Query
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: () =>({
         ...CustomerQueries,
-        Options:{
-            type: new GraphQLList(OptionType),
-            resolve(){
-                return axios.get('http://localhost:4051/Options' )
-                .then(res => res.data);
-            }
-        }
+        ...OptionQueries
     })    
 });
 
@@ -47,7 +35,8 @@ const RootQuery = new GraphQLObjectType({
 const mutation = new GraphQLObjectType({
     name : 'Mutation',
     fields: {
-        ...CustomerMutation
+        ...CustomerMutation,
+        ...OptionMutation
        
     }
 });

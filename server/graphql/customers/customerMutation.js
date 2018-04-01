@@ -1,13 +1,13 @@
 
-const axios = require('axios');
-const {
+import axios from 'axios';
+import {
     GraphQLObjectType,
     GraphQLString,
     GraphQLInt,
     GraphQLSchema,
     GraphQLList,
     GraphQLNonNull,    
-} = require('graphql');
+} from 'graphql';
 
 import CustomerType from './customerType';
 
